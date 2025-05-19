@@ -103,10 +103,8 @@ const props = defineProps({
 
 const emit = defineEmits(["saveChanges", "cancel"]);
 
-// Local copy of the product data
 const editForm = ref({ ...props.product });
 
-// Update local form when prop changes
 watch(
   () => props.product,
   (newProduct) => {
