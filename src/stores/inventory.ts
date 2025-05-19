@@ -69,6 +69,16 @@ export const useInventoryStore = defineStore("inventory", {
       const id = `${Date.now()}`;
       this.products.push({ ...product, id, sku: `SKU-${id}` });
     },
+    deleteProduct(id: number) {
+      this.products = this.products.filter((product) => product.id !== id);
+    },
+
+    updateProduct(updatedProduct: Product) {
+      const index = this.products.findIndex((p) => p.id === updatedProduct.id);
+      if (index !== -1) {
+        this.products[index] = { ...this.products[index], ...updatedProduct };
+      }
+    },
     updateStock(productId: number, newStock: number) {
       const product = this.products.find((p) => p.id === productId);
       if (product) product.stock = newStock;
