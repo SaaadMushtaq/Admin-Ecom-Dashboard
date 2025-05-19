@@ -20,3 +20,24 @@
   --color-success-hover: #059669;
   --color-danger-hover: #dc2626;
 }
+
+body {
+  background: #041c3e;
+}
+
+.custom-visible-scrollbar::-webkit-scrollbar {
+  width: 3px;
+}
+
+.custom-visible-scrollbar::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.custom-visible-scrollbar::-webkit-scrollbar-thumb {
+  background: #041c3e;
+  border-radius: 10px;
+}
+
+.custom-visible-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: white;
+}

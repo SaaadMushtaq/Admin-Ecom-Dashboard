@@ -1,19 +1,29 @@
 <template>
-  <div class="p-6 max-w-7xl mx-auto space-y-8">
-    <InventoryHeader
-      v-model:search-query="searchQuery"
-      title="Inventory Management"
-    />
+  <div
+    class="pt-[80px] lg:pt-0 h-full custom-visible-scrollbar bg-[var(--color-secondary)] rounded-lg shadow-xl p-2 lg:p-6 overflow-y-auto"
+  >
+    <div class="p-6 w-full mx-auto space-y-6 lg:space-y-8">
+      <div
+        class="w-full flex flex-col sm:flex-row gap-4 justify-between items-start"
+      >
+        <InventoryHeader
+          v-model:search-query="searchQuery"
+          title="Inventory Management"
+        />
 
-    <InventoryFilters
-      v-model:category="selectedCategory"
-      v-model:sort-by="sortBy"
-      :categories="categories"
-    />
+        <InventoryFilters
+          v-model:category="selectedCategory"
+          v-model:sort-by="sortBy"
+          :categories="categories"
+        />
+      </div>
+      <InventoryTable
+        :products="filteredProducts"
+        @update-stock="updateStock"
+      />
 
-    <InventoryTable :products="filteredProducts" @update-stock="updateStock" />
-
-    <ForecastSection :products="lowStockProducts" />
+      <ForecastSection :products="lowStockProducts" />
+    </div>
   </div>
 </template>
 

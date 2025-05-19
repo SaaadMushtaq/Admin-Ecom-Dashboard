@@ -1,8 +1,8 @@
 <template>
   <div
-    class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
+    class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-auto"
   >
-    <table class="w-full divide-y divide-gray-200">
+    <table class="w-full divide-y divide-gray-200 overflow-auto">
       <thead class="bg-gray-50">
         <tr>
           <TableHeader>Product</TableHeader>
@@ -20,7 +20,11 @@
           class="hover:bg-gray-50 transition-colors duration-150"
           :class="{ 'bg-rose-50/30': product.stock < 50 }"
         >
-          <TableCell>{{ product.name }}</TableCell>
+          <TableCell
+            ><RouterLink :to="`/products/${product.id}`">{{
+              product.name
+            }}</RouterLink></TableCell
+          >
           <TableCell class="text-gray-600">{{ product.category }}</TableCell>
           <TableCell class="font-mono text-gray-500">{{
             product.sku
@@ -45,6 +49,7 @@
 
 <script setup>
 import { formatCurrency } from "../../utils/formatter";
+import { RouterLink } from "vue-router";
 import TableHeader from "./ui/TableHeader.vue";
 import TableCell from "./ui/TableCell.vue";
 import StockInput from "./ui/StockInput.vue";

@@ -3,6 +3,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import RevenueAnalysis from "./pages/RevenueAnalysis.vue";
 import InventoryManagement from "./pages/InventoryManagement.vue";
 import ProductRegistration from "./pages/ProductRegistration.vue";
+import ProductDetails from "./pages/ProductDetails.vue";
 
 const routes: RouteRecordRaw[] = [
   {
@@ -23,6 +24,11 @@ const routes: RouteRecordRaw[] = [
     path: "/products",
     name: "ProductRegistration",
     component: ProductRegistration,
+  },
+  {
+    path: "/products/:id",
+    name: "ProductDetails",
+    component: ProductDetails,
   },
   {
     path: "/:pathMatch(.*)*",

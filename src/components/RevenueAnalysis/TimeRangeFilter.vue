@@ -1,9 +1,9 @@
 <template>
-  <div
-    class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 mb-6"
-  >
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      <div class="space-y-1">
+  <div class="mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div
+        class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 space-y-1"
+      >
         <label
           class="flex items-center space-x-3 group cursor-pointer text-gray-800 mb-1.5"
         >
@@ -20,7 +20,7 @@
         <select
           v-model="selectedRange"
           @change="emitUpdate"
-          class="w-full pl-3 pr-8 py-2.5 border border-gray-300 rounded-lg shadow-sm hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+          class="w-full pl-3 pr-8 py-2.5 border border-gray-300 rounded-lg shadow-sm hover:border-gray-400 focus:outline-none transition-all"
         >
           <option
             v-for="range in timeRanges"
@@ -33,7 +33,9 @@
         </select>
       </div>
 
-      <div class="space-y-1">
+      <div
+        class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 space-y-1"
+      >
         <label
           class="flex items-center space-x-3 group cursor-pointer text-gray-800 mb-1.5"
         >
@@ -50,7 +52,7 @@
         <select
           v-model="selectedCategory"
           @change="emitUpdate"
-          class="w-full pl-3 pr-8 py-2.5 border border-gray-300 rounded-lg shadow-sm hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+          class="w-full pl-3 pr-8 py-2.5 border border-gray-300 rounded-lg shadow-sm hover:border-gray-400 focus:outline-none transition-all"
         >
           <option value="" class="text-gray-400 hover:bg-blue-50">
             All Categories

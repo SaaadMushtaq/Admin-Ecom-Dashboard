@@ -1,24 +1,26 @@
 <template>
   <div>
-    <nav class="bg-[var(--color-primary)] shadow-xl z-50 relative">
+    <nav
+      class="bg-[var(--color-primary)] shadow-xl z-50 w-full fixed lg:left-0 lg:top-0 lg:h-screen lg:w-66"
+    >
       <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 lg:h-full lg:flex-col lg:items-start lg:justify-start lg:space-y-8 lg:p-6"
       >
         <RouterLink
           to="/revenue"
-          class="flex items-center space-x-3 transition-all duration-300 hover:scale-105 group"
+          class="flex items-center space-x-3 transition-all duration-300 hover:scale-105 group lg:w-full"
         >
           <Logo />
         </RouterLink>
 
         <div
-          class="hidden lg:flex items-center space-x-8 text-white text-md md:text-[16px] font-medium"
+          class="hidden lg:flex flex-col space-y-4 text-white text-md md:text-[16px] font-medium lg:w-full"
         >
           <RouterLink
             v-for="item in navbar"
             :key="item.name"
             active-class="bg-[var(--color-secondary)] text-[var(--color-primary)] hover:scale-105 rounded-lg transition-all duration-300"
-            class="flex items-center gap-x-2 hover:bg-[var(--color-secondary)] hover:text-[var(--color-primary)] p-2 rounded-lg transition-colors duration-300"
+            class="flex items-center gap-x-2 hover:bg-[var(--color-secondary)] hover:text-[var(--color-primary)] p-2 rounded-lg transition-colors duration-300 w-full"
             :to="item.path"
           >
             <font-awesome-icon :icon="['fas', item.icon]" /> {{ item.name }}

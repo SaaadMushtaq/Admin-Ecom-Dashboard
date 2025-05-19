@@ -1,6 +1,5 @@
-<!-- ForecastSection.vue -->
 <template>
-  <section class="p-6 bg-blue-50/50 rounded-xl border border-blue-100">
+  <section class="py-6">
     <header class="mb-6">
       <h2 class="text-lg font-semibold text-gray-800">Restocking Forecast</h2>
       <p class="text-sm text-gray-500 mt-1">Products needing attention</p>
